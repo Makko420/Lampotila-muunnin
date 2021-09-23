@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <form action="">
+        <select name="tempType" id="tempType">
+             <option value="CtoF">Celcius -> Fahrenheit</option>
+             <option value="CtoK">Celcius -> Kelvin</option>
+             <option value="KtoF">Kelvin -> Fahrenheit</option>
+             <option value="KtoC">Kelvin -> Celcius</option>
+             <option value="FtoK">Fahrenheit -> Kelvin</option>
+             <option value="FtoC">Fahrenheit -> Celsius</option>
+        </select><br>
+        <label for="temp">Syötä lämpötila:</label><br>
+        <input type="text" id="temp" name="temp">
+        <input type="button" value="muunna" id="muunna" onclick="change()"><br>
+
+            <input type="radio" id="1" name="desimaali" value="1">
+            <label for="1">1 desimaali</label><br>
+            <input type="radio" id="2" name="desimaali" value="2">
+            <label for="2">2 desimaali</label><br>
+            <input type="radio" id="3" name="desimaali" value="3">
+            <label for="3">3 desimaali</label><br>
+    </form>
+</body>
+<script src="mainn.js"></script>
+</html>
