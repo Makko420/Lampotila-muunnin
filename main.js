@@ -3,7 +3,23 @@ function change() {
     var tempatureValue = document.getElementById("temp").value;
     var tempature = 0;
 
-    
+    const rbs = document.querySelectorAll('input[name="desimaali"]');
+    let selectedValue = 0;
+    for (const rb of rbs) {
+        if (rb.checked) {
+            selectedValue = rb.value;
+            break;
+        }
+    }
+
+
+    if (tempatureValue == "") {
+        alert("Syötä lämpötila!")
+    } else if (selectedValue == 0) {
+        alert("Valitse jokin desimaali!")
+    }
+
+
     if (tempatureType == "CtoF") {
         tempature = tempatureValue * 1.8 + 32;
     } else if (tempatureType == "CtoK") {
@@ -18,19 +34,12 @@ function change() {
         tempature = (tempatureValue - 32) / 1.8;
     }
 
-    const rbs = document.querySelectorAll('input[name="desimaali"]');
-    let selectedValue;
-    for (const rb of rbs) {
-        if (rb.checked) {
-            selectedValue = rb.value;
-            break;
-        }
-    }
+
     if (selectedValue == 1) {
-        alert(tempature.toFixed(1))
+        document.getElementById("result").innerHTML = "Lämpötila: " + tempature.toFixed(1);
     } else if (selectedValue == 2) {
-        alert(tempature.toFixed(2))
+        document.getElementById("result").innerHTML = "Lämpötila: " + tempature.toFixed(2);
     } else if (selectedValue == 3) {
-        alert(tempature.toFixed(3))
+        document.getElementById("result").innerHTML = "Lämpötila: " + tempature.toFixed(3);
     }
 }
